@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <iostream>
 #include <ctime>
 #include <string>
@@ -192,7 +191,7 @@ void test_object()
 	std::cout << std::endl;
 }
 
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
 	test_int();
 	test_float();
