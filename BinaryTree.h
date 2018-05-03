@@ -1,6 +1,8 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 
+#include <sstream>
+
 template <class T> struct Node
 {
 	T value;
@@ -64,6 +66,7 @@ public:
 
 	void getSortedList(std::vector<T>& sorted)
 	{
+		sorted.clear();
 		getSortedList_recursive(_root, sorted);
 	}
 
@@ -152,7 +155,6 @@ private:
 			else
 				node->left = new Node<T>(value, node, 0, 0);
 	}
-	// template <> void BinaryTree<char*>::insert_recursive(char* value, Node<char*>* node)
 
 	void delete_recursive(Node<T>* node)
 	{
@@ -196,7 +198,8 @@ private:
 		if (node == 0)
 			return 0;
 
-		const int length = std::to_string(node->value).length();
+		std::ostringstream o; o << node->value;
+		const int length = (o.str()).length();
 		return std::max(length, std::max(maxValueLength_recursive(node->left), maxValueLength_recursive(node->right)));
 	}
 

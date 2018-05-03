@@ -30,23 +30,4 @@ int lengthCharPointer(const char* a)
 	return length;
 }
 
-char randomAlphaCharacter()
-{
-	const int lower = 'z' - 'a' + 1;
-	const int upper = 'Z' - 'A' + 1;
-
-	return (rand() % 2 == 0) ? ('a' + rand() % lower) : ('A' + rand() % upper);
-}
-
-char* randomAlphaString(int length)
-{
-	char* value = new char(length);
-
-	for (int l = 0; l < length - 1; l++)
-		value[l] = randomAlphaCharacter();
-	value[length - 1] = '\0'; // termination character
-
-	return value;
-}
-
 #endif
