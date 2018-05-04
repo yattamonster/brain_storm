@@ -77,9 +77,9 @@ int main()
 
 	// compare sorting methods
 	QuickSelectiveSort<int> S1;
-	QuickIterativeSort<int> S2;
+	BinaryTreeSort<int> S2;
 
-	if (test_compareSort(S1, S2, 1000))
+	if (test_compareSort(S1, S2, 100000))
 		std::cout << "Comparing Sorting methods '" << S1.name() << "'/'" << S2.name() << "' succeeded!\n";
 	else
 		std::cout << "Warning: Comparing Sorting methods '" << S1.name() << "'/'" << S2.name() << "' failed!\n";
